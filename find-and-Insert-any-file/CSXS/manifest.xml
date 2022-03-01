@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest
+	Version="9.0"
+	ExtensionBundleId="com.find.clips.directly"
+	ExtensionBundleVersion="1.0.0"
+	ExtensionBundleName="Find Insert Clips Directly"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<ExtensionList>
+		<Extension Id="com.find.clips.directly.panel" Version="1.0" />
+	</ExtensionList>
+
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="PPRO" Version="11.0" />
+		</HostList>
+
+	<LocaleList>
+		<Locale Code="All" />
+	</LocaleList>
+
+	<RequiredRuntimeList>
+		<RequiredRuntime Name="CSXS" Version="9.0" />
+	</RequiredRuntimeList>
+</ExecutionEnvironment>
+
+	<DispatchInfoList>
+		<Extension Id="com.find.clips.directly.panel">
+			<DispatchInfo>
+
+			<Resources>
+				<MainPath>./index.html</MainPath>
+				<ScriptPath>./jsx/insert-any-file-or-apend-to-top.jsx</ScriptPath>
+			</Resources>
+
+             <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                    <!-- <StartOn>-->
+                        <!-- PS dispatches this event on startup -->
+                    <!-- 	<Event>applicationActivate</Event>-->
+						<!-- PPro dispatches this event on startup -->
+						<!-- <Event>com.adobe.csxs.events.ApplicationActivate</Event>-->
+                   <!--  </StartOn> -->
+                </Lifecycle>
+
+			<UI>
+
+				<Type>Panel</Type>
+				<Menu>Find Clips and insert Directly</Menu>
+
+				<Geometry>
+					<Size>
+						<Height>300</Height>
+						<Width>490</Width>
+					</Size>
+					<MinSize>
+						<Height>300</Height>
+						<Width>490</Width>
+					</MinSize>
+					<MaxSize>
+						<Height>300</Height>
+						<Width>490</Width>
+					</MaxSize>
+					
+				</Geometry>
+
+			</UI>
+		</DispatchInfo>
+	</Extension>
+</DispatchInfoList>
+</ExtensionManifest>

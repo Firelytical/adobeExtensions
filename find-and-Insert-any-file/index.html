@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	* {
+	  box-sizing: border-box;
+	}
+	
+	body {
+	  font: 16px Arial;  
+	}
+	
+	/*the container must be positioned relative:*/
+	.autocomplete {
+	  position: relative;
+	  display: inline-block;
+
+	  
+	}
+	
+	input {
+	  border: 1px solid transparent;
+	  background-color: #f1f1f1;
+	  padding: 10px;
+	  font-size: 16px;
+	}
+	
+	input[type=text] {
+	  background-color: #f1f1f1;
+	  width: 100%;
+	}
+	
+	input[type=submit] {
+	  background-color: DodgerBlue;
+	  color: #fff;
+	  cursor: pointer;
+	}
+	
+	.autocomplete-items {
+	  position: absolute;
+	  border: 1px solid #d4d4d4;
+	  border-bottom: none;
+	  border-top: none;
+	  z-index: 99;
+	  /*position the autocomplete items to be the same width as the container:*/
+	  top: 100%;
+	  left: 0;
+	  right: 0;
+	  overflow:scroll;
+	  height:10rem;
+	  
+	}
+	
+	.autocomplete-items div {
+	  padding: 10px;
+	  cursor: pointer;
+	  background-color: #fff; 
+	  border-bottom: 1px solid #d4d4d4; 
+	}
+	
+	/*when hovering an item:*/
+	.autocomplete-items div:hover {
+	  background-color: #cacaca; 
+	}
+	
+	/*when navigating through the items using the arrow keys:*/
+	.autocomplete-active {
+	  background-color: DodgerBlue !important; 
+	  color: #ffffff; 
+	}
+	</style>
+<link rel="stylesheet" href="css/styles.css"/>
+<link rel="stylesheet" type="text/css" href="css/topcoat-desktop-dark.css"/>
+	<title>Find Clips and insert Directly</title>
+	<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+
+
+
+</script>
+</head>
+<body scroll="no">
+	<div id="maindiv">
+	<div>
+	</div>
+
+	<div>
+
+		<form autocomplete="off">
+			<div class="autocomplete" style="width:100%;">
+		<span class="textArea" >
+			
+			<input id="textByUser" type="text"  placeholder="Search.." style="width: 60%;height:45px;display: inline;padding: 2px;border-width: 10px" >
+			<span class="buttons" style="width:490px;height:10px; ">
+				<button id="addButton" class="topcoat-button--large">+</button>
+				
+			</span>
+		</div>
+		</span>
+	</div>
+	</form>
+		
+	</div>
+	<span id="helptip">
+		This will include Debug info for the users
+		<div id="waitForFIles">Loading...</div>
+		<div>
+			<p id="tipsForUsers">
+			Tips:
+			Type the EXACT name of the Clip to insert it at the lowset available track,
+			or Type the Name and follow it by "/" and the number
+			of track to insert at that track.
+			example:(clip.mp4/2)
+		</div>
+	<div>
+
+		<div >Num Of Items In this project</div>
+		<div id="numFilesCounter"></div>
+		
+
+		
+		
+	</div>
+	</span>
+
+	</div>
+
+	<script src="js/libs/CSInterface.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
